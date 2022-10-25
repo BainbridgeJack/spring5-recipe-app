@@ -3,6 +3,7 @@ package guru.springframework.model;
 import guru.springframework.enumerations.Difficulty;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -21,6 +22,7 @@ public class Recipe {
     private Integer servings;
     private String source;
     private String url;
+    @Lob
     private String directions;
 
     // Specify string to override default ORIDINAL enumeration, so if we add strings to enums, were fine.
@@ -32,7 +34,7 @@ public class Recipe {
 
     //Map on the target property - recipe (on the Ingredient Class)
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingredient> ingredient;
+    private Set<Ingredient> ingredient = new HashSet<>();
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
@@ -41,7 +43,7 @@ public class Recipe {
     @ManyToMany
     @JoinTable(name = "RECIPE_CATEGORy",
             joinColumns = @JoinColumn(name = "RECIPE_ID"), inverseJoinColumns = @JoinColumn(name = "CATEGORY_ID"))
-    private Set<Category> categories;
+    private Set<Category> categories = new HashSet<>();
 
     public Long getId() {
         return id;
