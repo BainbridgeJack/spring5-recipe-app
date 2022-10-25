@@ -1,5 +1,7 @@
 package guru.springframework.model;
 
+import guru.springframework.enumerations.Difficulty;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -20,8 +22,10 @@ public class Recipe {
     private String source;
     private String url;
     private String directions;
-    //TODO:
-    //private Difficulty difficulty;
+
+    // Specify string to override default ORIDINAL enumeration, so if we add strings to enums, were fine.
+    @Enumerated(value = EnumType.STRING)
+    private Difficulty difficulty;
 
     @Lob
     private byte[] image;
@@ -119,5 +123,13 @@ public class Recipe {
 
     public void setIngredient(Set<Ingredient> ingredient) {
         this.ingredient = ingredient;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 }
