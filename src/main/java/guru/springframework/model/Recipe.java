@@ -37,6 +37,12 @@ public class Recipe {
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
 
+    //Specify a JOIN_TABLE for ManyToMany relationships.
+    @ManyToMany
+    @JoinTable(name = "RECIPE_CATEGORy",
+            joinColumns = @JoinColumn(name = "RECIPE_ID"), inverseJoinColumns = @JoinColumn(name = "CATEGORY_ID"))
+    private Set<Category> categories;
+
     public Long getId() {
         return id;
     }
@@ -131,5 +137,13 @@ public class Recipe {
 
     public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
     }
 }
