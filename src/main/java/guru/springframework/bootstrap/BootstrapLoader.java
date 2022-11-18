@@ -64,120 +64,49 @@ public class BootstrapLoader  implements CommandLineRunner {
         Recipe grilledChickenTacos = new Recipe();
         Set<Ingredient> grilledChickenIngredientList = new HashSet<>();
 
-        Ingredient anchoChiliPowder = new Ingredient();
-        anchoChiliPowder.setDescription("Ancho Chili Powder");
-        anchoChiliPowder.setAmount(new BigDecimal(2));
-        anchoChiliPowder.setUnitOfMeasure(tablespoon);
-        anchoChiliPowder.setRecipe(grilledChickenTacos);
+        Ingredient anchoChiliPowder = new Ingredient("Ancho Chili Powder", new BigDecimal(2), tablespoon);
+        Ingredient driedOregano = new Ingredient("Dried Oregano", new BigDecimal(1), teaspoon);
+        Ingredient driedCumin = new Ingredient("Dried Cumin", new BigDecimal(1), teaspoon);
+        Ingredient sugar = new Ingredient("Sugar", new BigDecimal(1), teaspoon);
+        Ingredient kosherSalt = new Ingredient("Kosher Salt", new BigDecimal(0.5), teaspoon);
+        Ingredient garlicClove = new Ingredient("Clove of Garlic", new BigDecimal(1), each);
+        Ingredient orangeZest = new Ingredient("Finely Grated Orange Zest", new BigDecimal(1), tablespoon);
+        Ingredient freshOJ = new Ingredient("Freshly Squeezed Orange Juice", new BigDecimal(3), tablespoon);
+        Ingredient oliveOil = new Ingredient("Olive Oil", new BigDecimal(2), tablespoon);
+        Ingredient skinlessBonelessChickenThighs = new Ingredient("Boneless & Skinless Chicken Thighs", new BigDecimal(2), tablespoon);
 
-        Ingredient driedOregano = new Ingredient();
-        driedOregano.setDescription("Dried Oregano");
-        driedOregano.setAmount(new BigDecimal(1));
-        driedOregano.setUnitOfMeasure(teaspoon);
-        driedOregano.setRecipe(grilledChickenTacos);
+        grilledChickenTacos.addIngredient(anchoChiliPowder);
+        grilledChickenTacos.addIngredient(driedOregano);
+        grilledChickenTacos.addIngredient(driedCumin);
+        grilledChickenTacos.addIngredient(sugar);
+        grilledChickenTacos.addIngredient(kosherSalt);
+        grilledChickenTacos.addIngredient(garlicClove);
+        grilledChickenTacos.addIngredient(orangeZest);
+        grilledChickenTacos.addIngredient(freshOJ);
+        grilledChickenTacos.addIngredient(oliveOil);
+        grilledChickenTacos.addIngredient(skinlessBonelessChickenThighs);
 
-        Ingredient driedCumin = new Ingredient();
-        driedCumin.setDescription("Dried Cumin");
-        driedCumin.setAmount(new BigDecimal(1));
-        driedCumin.setUnitOfMeasure(teaspoon);
-        driedCumin.setRecipe(grilledChickenTacos);
-
-        Ingredient sugar = new Ingredient();
-        sugar.setDescription("Sugar");
-        sugar.setAmount(new BigDecimal(1));
-        sugar.setUnitOfMeasure(teaspoon);
-        sugar.setRecipe(grilledChickenTacos);
-
-        Ingredient kosherSalt = new Ingredient();
-        kosherSalt.setDescription("Kosher Salt");
-        kosherSalt.setAmount(new BigDecimal(0.5));
-        kosherSalt.setUnitOfMeasure(teaspoon);
-        kosherSalt.setRecipe(grilledChickenTacos);
-
-        Ingredient garlicClove = new Ingredient();
-        garlicClove.setDescription("Clove of Garlic");
-        garlicClove.setAmount(new BigDecimal(1));
-        garlicClove.setUnitOfMeasure(each);
-        garlicClove.setRecipe(grilledChickenTacos);
-
-        Ingredient orangeZest = new Ingredient();
-        orangeZest.setDescription("Finely Grated Orange Zest");
-        orangeZest.setAmount(new BigDecimal(1));
-        orangeZest.setUnitOfMeasure(tablespoon);
-        orangeZest.setRecipe(grilledChickenTacos);
-
-        Ingredient freshOJ = new Ingredient();
-        freshOJ.setDescription("Freshly Squeezed Orange Juice");
-        freshOJ.setAmount(new BigDecimal(3));
-        freshOJ.setUnitOfMeasure(tablespoon);
-        freshOJ.setRecipe(grilledChickenTacos);
-
-        Ingredient oliveOil = new Ingredient();
-        oliveOil.setDescription("Olive Oil");
-        oliveOil.setAmount(new BigDecimal(2));
-        oliveOil.setUnitOfMeasure(tablespoon);
-        oliveOil.setRecipe(grilledChickenTacos);
-
-        Ingredient skinlessBonelessChickenThighs = new Ingredient();
-        skinlessBonelessChickenThighs.setDescription("Bonless & Skinless Chicken Thighs");
-        skinlessBonelessChickenThighs.setAmount(new BigDecimal(2));
-        skinlessBonelessChickenThighs.setUnitOfMeasure(tablespoon);
-        skinlessBonelessChickenThighs.setRecipe(grilledChickenTacos);
 
         // To Serve Section:
-        Ingredient cornTortillas = new Ingredient();
-        cornTortillas.setDescription("Small Corn Tortillas");
-        cornTortillas.setAmount(new BigDecimal(8));
-        cornTortillas.setUnitOfMeasure(each);
-        cornTortillas.setRecipe(grilledChickenTacos);
+        Ingredient cornTortillas = new Ingredient("Small Corn Tortillas", new BigDecimal(8), each);
+        Ingredient babyArugala = new Ingredient("Cup of Baby Arugala", new BigDecimal(3), ounce);
+        Ingredient avocado = new Ingredient("Sliced Ripe Avocado", new BigDecimal(2), each);
+        Ingredient radish = new Ingredient("Sliced Radish", new BigDecimal(4), each);
+        Ingredient cherryTomatoes = new Ingredient("Cherry Tomatoes (halved)", new BigDecimal(0.5), pint);
+        Ingredient cilantro = new Ingredient("Cilantro", new BigDecimal(1), each);
+        Ingredient sourCream = new Ingredient("Sour Cream", new BigDecimal(0.5), cup);
+        Ingredient milk = new Ingredient("Milk", new BigDecimal(0.25), cup);
+        Ingredient lime = new Ingredient("Lime", new BigDecimal(1), each);
 
-        Ingredient babyArugala = new Ingredient();
-        babyArugala.setDescription("Cup of Baby Arugala");
-        babyArugala.setAmount(new BigDecimal(3));
-        babyArugala.setUnitOfMeasure(ounce);
-        babyArugala.setRecipe(grilledChickenTacos);
-
-        Ingredient avocado = new Ingredient();
-        avocado.setDescription("Sliced Ripe Avocado");
-        avocado.setAmount(new BigDecimal(2));
-        avocado.setUnitOfMeasure(each);
-        avocado.setRecipe(grilledChickenTacos);
-
-        Ingredient radish = new Ingredient();
-        radish.setDescription("Sliced Radish");
-        radish.setAmount(new BigDecimal(4));
-        radish.setUnitOfMeasure(each);
-        radish.setRecipe(grilledChickenTacos);
-
-        Ingredient cherryTomatoes = new Ingredient();
-        cherryTomatoes.setDescription("Cherry Tomatoes (halved)");
-        cherryTomatoes.setAmount(new BigDecimal(0.5));
-        cherryTomatoes.setUnitOfMeasure(pint);
-        cherryTomatoes.setRecipe(grilledChickenTacos);
-
-        Ingredient cilantro = new Ingredient();
-        cilantro.setDescription("Cilantro");
-        cilantro.setAmount(new BigDecimal(1));
-        cilantro.setUnitOfMeasure(each);
-        cilantro.setRecipe(grilledChickenTacos);
-
-        Ingredient sourCream = new Ingredient();
-        sourCream.setDescription("Sour Cream");
-        sourCream.setAmount(new BigDecimal(0.5));
-        sourCream.setUnitOfMeasure(cup);
-        sourCream.setRecipe(grilledChickenTacos);
-
-        Ingredient milk = new Ingredient();
-        milk.setDescription("Milk");
-        milk.setAmount(new BigDecimal(0.25));
-        milk.setUnitOfMeasure(cup);
-        milk.setRecipe(grilledChickenTacos);
-
-        Ingredient lime = new Ingredient();
-        lime.setDescription("Lime");
-        lime.setAmount(new BigDecimal(1));
-        lime.setUnitOfMeasure(each);
-        lime.setRecipe(grilledChickenTacos);
+        grilledChickenTacos.addIngredient(cornTortillas);
+        grilledChickenTacos.addIngredient(babyArugala);
+        grilledChickenTacos.addIngredient(avocado);
+        grilledChickenTacos.addIngredient(radish);
+        grilledChickenTacos.addIngredient(cherryTomatoes);
+        grilledChickenTacos.addIngredient(cilantro);
+        grilledChickenTacos.addIngredient(sourCream);
+        grilledChickenTacos.addIngredient(milk);
+        grilledChickenTacos.addIngredient(lime);
 
         grilledChickenIngredientList.add(anchoChiliPowder);
         grilledChickenIngredientList.add(driedOregano);
@@ -241,9 +170,10 @@ public class BootstrapLoader  implements CommandLineRunner {
                 "\n" +
                 "Grill the chicken, then let it rest while you warm the tortillas. Now you are ready to assemble the tacos and dig in. The whole meal comes together in about 30 minutes!");
 
+        grilledChickenTacos.getCategories().add(mexicanCategory);
+
         grilledChickenTacos.setNotes(grilledChickenTacoNotes);
         grilledChickenTacoNotes.setRecipe(grilledChickenTacos);
-        grilledChickenTacos.getCategories().add(mexicanCategory);
 
         recipeList.add(grilledChickenTacos);
 
@@ -286,29 +216,18 @@ public class BootstrapLoader  implements CommandLineRunner {
         cilantro.setAmount(new BigDecimal(2));
         cilantro.setRecipe(bestGuacamole);
 
-        Ingredient redOnion = new Ingredient();
-        redOnion.setDescription("Minced Red Onion");
-        redOnion.setAmount(new BigDecimal(2));
-        redOnion.setUnitOfMeasure(each);
-        redOnion.setRecipe(bestGuacamole);
+        Ingredient redOnion = new Ingredient("Minced Red Onion", new BigDecimal(2), each);
+        Ingredient serrano = new Ingredient("Serrano Chilis, Stems and Seeds Removed, Minced", new BigDecimal(2), each);
+        Ingredient groundBlackPepper = new Ingredient("Ground Black Pepper", new BigDecimal(1), dash);
+        Ingredient tomato = new Ingredient("Ripe Tomato (chopped)", new BigDecimal(0.5), each);
 
-        Ingredient serrano = new Ingredient();
-        serrano.setDescription("Serrano Chilis, Stems and Seeds Removed, Minced");
-        serrano.setAmount(new BigDecimal(2));
-        serrano.setUnitOfMeasure(each);
-        serrano.setRecipe(bestGuacamole);
-
-        Ingredient groundBlackPepper = new Ingredient();
-        groundBlackPepper.setDescription("Ground Black Pepper");
-        groundBlackPepper.setAmount(new BigDecimal(1));
-        groundBlackPepper.setUnitOfMeasure(pinch);
-        groundBlackPepper.setRecipe(bestGuacamole);
-
-        Ingredient tomato = new Ingredient();
-        tomato.setDescription("Ripe Tomato (chopped)");
-        tomato.setAmount(new BigDecimal(0.5));
-        tomato.setUnitOfMeasure(each);
-        tomato.setRecipe(bestGuacamole);
+        bestGuacamole.addIngredient(avocado);
+        bestGuacamole.addIngredient(kosherSalt);
+        bestGuacamole.addIngredient(cilantro);
+        bestGuacamole.addIngredient(redOnion);
+        bestGuacamole.addIngredient(serrano);
+        bestGuacamole.addIngredient(groundBlackPepper);
+        bestGuacamole.addIngredient(tomato);
 
         Set<Ingredient> bestGuacamolegrilledChickenIngredientList = new HashSet<>();
         bestGuacamolegrilledChickenIngredientList.add(avocado);
@@ -321,13 +240,14 @@ public class BootstrapLoader  implements CommandLineRunner {
         bestGuacamole.setIngredient(bestGuacamolegrilledChickenIngredientList);
 
         Notes bestGuacamoleNotes = new Notes();
-        bestGuacamoleNotes.setRecipe(bestGuacamole);
         bestGuacamoleNotes.setNotes("Guacamole! Did you know that over 2 billion pounds of avocados are consumed each year in the U.S.? (Google it.) That's over 7 pounds per person. I'm guessing that most of those avocados go into what has become America's favorite dip: guacamole.\n" +
                 "\n" +
                 "Guacamole: A Classic Mexican Dish\n" +
                 "The word \"guacamole\" and the dip, are both originally from Mexico, where avocados have been cultivated for thousands of years. The name is derived from two Aztec Nahuatl words—ahuacatl (avocado) and molli (sauce).");
 
         bestGuacamole.getCategories().add(mexicanCategory);
+
+        bestGuacamoleNotes.setRecipe(bestGuacamole);
         bestGuacamole.setNotes(bestGuacamoleNotes);
 
         recipeList.add(bestGuacamole);
